@@ -45,36 +45,23 @@ function splitHexToArray() {
     return splitHex;
 }
 
-function changeRed() {
-    var tempColor = splitHexToArray();
+function changeByColor(button_id) {
+    var colorToChange = splitHexToArray();
 
-    tempColor[1] = getRandomColorUnit();
-    tempColor[2] = getRandomColorUnit();
+    if (button_id == "red") {
+        colorToChange[1] = getRandomColorUnit();
+        colorToChange[2] = getRandomColorUnit();
+    } else if (button_id == "green") {
+        colorToChange[3] = getRandomColorUnit();
+        colorToChange[4] = getRandomColorUnit();
+    } else if (button_id == "blue") {
+        colorToChange[5] = getRandomColorUnit();
+        colorToChange[6] = getRandomColorUnit();
+    }
 
-    var newHex = tempColor.join("");
+    var newHex = colorToChange.join("");
 
-    return newHex;
-}
-
-function changeGreen() {
-    var tempColor = splitHexToArray();
-
-    tempColor[3] = getRandomColorUnit();
-    tempColor[4] = getRandomColorUnit();
-
-    var newHex = tempColor.join("");
-
-    return newHex;
-}
-
-function changeBlue() {
-    var tempColor = splitHexToArray();
-
-    tempColor[5] = getRandomColorUnit();
-    tempColor[6] = getRandomColorUnit();
-
-    var newHex = tempColor.join("");
-
-    return newHex;
+    document.getElementById("background").style.backgroundColor = newHex;
+    document.getElementById("colorNumber").innerHTML = newHex;
 }
 
