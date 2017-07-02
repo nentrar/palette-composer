@@ -11,7 +11,7 @@ function getRandomBackgroundColor() {
 }
 
 function showColorHex() {
-    document.getElementById("colorNumber").innerHTML = rgbaToHex(); //set random Color as background
+    document.getElementById("colorNumber").innerHTML = rgbaToHex(); //write color in hex
 
     }
 
@@ -35,8 +35,46 @@ function getRandomColorUnit() {
     return colorUnit;
 }
 
-function changeRed() {
-    rgbaToHex();
+function splitHexToArray() {
+    var tempHex = rgbaToHex(),
+        splitHex = [];
 
-
+    for (var i = 0; i < 7; i += 1) {
+        splitHex.push(tempHex.charAt(i));
+    }
+    return splitHex;
 }
+
+function changeRed() {
+    var tempColor = splitHexToArray();
+
+    tempColor[1] = getRandomColorUnit();
+    tempColor[2] = getRandomColorUnit();
+
+    var newHex = tempColor.join("");
+
+    return newHex;
+}
+
+function changeGreen() {
+    var tempColor = splitHexToArray();
+
+    tempColor[3] = getRandomColorUnit();
+    tempColor[4] = getRandomColorUnit();
+
+    var newHex = tempColor.join("");
+
+    return newHex;
+}
+
+function changeBlue() {
+    var tempColor = splitHexToArray();
+
+    tempColor[5] = getRandomColorUnit();
+    tempColor[6] = getRandomColorUnit();
+
+    var newHex = tempColor.join("");
+
+    return newHex;
+}
+
