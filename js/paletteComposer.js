@@ -65,3 +65,16 @@ function changeByColor(button_id) {
     document.getElementById("colorNumber").innerHTML = newHex;
 }
 
+var boxId = 1;
+
+function saveToBox() {
+    var savedColor = rgbaToHex();
+
+    document.getElementById(boxId).style.backgroundColor = savedColor;
+
+    boxId++;
+
+    if (boxId == 7) {
+        boxId = 1;
+    }
+}
