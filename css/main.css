@@ -15,3 +15,23 @@ html {
     font-size: 3em;
     text-transform: uppercase;
 }
+
+.paletteBox {
+    width: 100px;
+    height: 100px;
+    background-color: #FFFFFF;
+    margin: 10px;
+    border-color: #000;
+    border-style: solid;
+}
+
+button {
+    float: left;
+    margin: 10px;
+}
+
+
+ul li {
+    display: inline-block;
+
+}
